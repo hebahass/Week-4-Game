@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crystal Game</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link href='https://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+<div class="header">
+	<h1>Crystal Collector</h1>
+</div>
+
+<div class="inst">
+	<h2>The Rules</h2>
+	<p>You will be given a random number at the start of the game.</p>
+	<br>
+	<p>There are three crystals below. By clicking on a crystal, you will add a specific amount of points to your total score. </p>
+	<br>
+	<p>You win the game by matching your total score to the random number. You lose the game if your total score goes above the random number.</p>
+	<br>
+	<p>The value of each crystal is hidden from you until you click on it. </p>
+	<br>
+	<p>Each time when the game starts, the game will change the values of each crystal.</p>
+	<br>
+</div>
+<div class="ans">
+	<h2>Match This Number: </h2>
+</div>
+<div class="crystals">
+	<div class="btn-group btn-group-lg" role="group" aria-label="...">
+	  	<button type="button" class="btn1 btn-default">
+	  		<img src="http://orig08.deviantart.net/62cb/f/2011/169/1/c/365_day_168_crystals_by_korikian-d3j8n69.png" width="125px" height="125px">
+	  	</button>
+	  	<button type="button" class="btn2 btn-default">
+	  		<img src="http://orig13.deviantart.net/9be1/f/2011/169/b/0/365_day_166_crystal_by_korikian-d3j8mee.png" width="125px" height="125px">
+	  	</button>
+	  	<button type="button" class="btn3 btn-default">
+	  	<img src="http://orig05.deviantart.net/f039/f/2012/168/3/c/purple_crystal_by_kaguradragon-d41xjuw.png" width="125px" height="125px">
+	  	</button>
+	</div>
+</div>
+<div class="guess">
+	<h2>Your Score:</h2>
+</div>
+<div class="score">
+	<h4>Wins: </h4>
+	<h4>Losses: </h4>
+</div>
+<script type="text/javascript">
+	var match = ($"<h2>")
+	var wins = "";
+	var losses = "";
+	var total=0;
+
+	var win = function (){
+	if (guesses === total) {
+		$(wins).html("Wins: " + wins + 1);	
+		resetGame();
+	
+	}else if(total > guesses){
+		$(losses).html("Losses: " + losses + 1);
+		resetGame();
+		}
+	};
+
+
+var randnum = function (min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+var guesses = randnum(19, 120);
+
+var btn1 = randnum(1, 12);
+var btn2 = randnum(1, 12);
+var btn3 = randnum(1, 12);
+
+match.append("Match This Number:  "  + randnum);
+
+$(".btn1").on("click", function(){
+	 total += crys1;
+ 	 setScore();
+	 checkwin();
+
+});
+
+$(".btn2").on("click", function(){
+	 total += crys2;
+ 	 setScore();
+	 checkwin();
+});
+ 
+$(".btn3").on("click", function(){
+	 total += crys3;
+ 	 setScore();
+	 checkwin();
+});
+
+
+function totalScore(){
+	$(guess).html("Your total score is: " + total);
+}
+
+</script>
+</body>
+</html>

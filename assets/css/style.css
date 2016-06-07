@@ -1,0 +1,48 @@
+body {
+	background-image: url("../images/purple.jpg");
+}
+h1 {
+	color: #ffe6ff;
+	font-family: 'Berkshire Swash', cursive;
+	font-size: 75px;
+    margin: 50px 0px 0px 730px;
+    text-shadow: 4px 4px 4px #aaa;
+
+}
+
+p, h2{
+	font-family: 'Berkshire Swash', cursive;
+	color: #ffe6ff;
+	text-shadow: 4px 4px 4px #aaa;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+p{
+	font-size: 20px;
+}
+
+.inst {
+	text-align: center;
+    line-height: 10px;
+}
+
+.button1 {
+	background-image:("../images/crys1.jpg" "width: 125px" "height: 125px");
+	/*width: 150px;
+	height: 150px;*/
+}
+.ans {
+	padding-bottom: 175px;
+}
+h4 {
+	font-family: 'Berkshire Swash', cursive;
+	color: #ffe6ff;
+	text-shadow: 4px 4px 4px #aaa;
+
+}
+.btn1, .btn2 {
+	margin-right: 50px;
+}
